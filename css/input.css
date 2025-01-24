@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+#navbar:hover {
+color: #1C359A;
+}
+#navbar.active {
+ color: #1C359A;
+ font-weight: bold; 
+ border-bottom: 2px solid #1C359A;
+}
