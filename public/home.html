@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/nav.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="javascript/nav.js"></script>
+
+  <title>Home</title>
+</head>
+
+<body class="md-overflow-y-hidden bg-[#DCDEEA]">
+  <div id="navbar"></div>
+
+  <main> <!--main content home-->
+    <!--first section-->
+    <section class="">
+      <img src="" alt="">
+
+      <div class="header flex flex-col items-center text-center py-8 relative">
+        <!-- Line Section -->
+        <div class="text-[#1C359A] text-sm flex justify-center w-full space-x-[290px]">
+          <div>No Lines, Just Good Coffee</div>
+          <div>Monday - Sunday 10:00 AM - 2:00 AM</div>
+        </div>
+
+        <!-- Title Section -->
+        <div class="title">
+          <div class="text-4xl sm:text-5xl font-black text-[#1C359A] mb-2">Brewed Fresh, Ready to Go</div>
+          <div class="text-3xl sm:text-4xl font-black text-black">Anytime, Anywhere!</div>
+        </div>
+
+        <!-- Order Now Button -->
+        <button
+          class="mt-6 bg-[#1C359A] text-sm font-semibold text-white py-3 px-10 rounded-full shadow-lg hover:bg-blue-700">
+          ORDER NOW
+        </button>
+
+        <div class="relative">
+          <!-- Top Coffee Splash Background -->
+          <div class="absolute inset-0">
+            <img src="../img/FLAVORED LATTES/SPANISH LATTE.jpg" alt="Coffee Splash" class="w-full h-auto">
+          </div>
+
+          <!-- Content -->
+          <div class="relative flex flex-col items-center">
+            <!-- Main Circle -->
+            <div id='gradient-container'
+              class="w-full bg-gradient-to-b from-brown-700 to-brown-500 rounded-t-full relative mt-48 overflow-hidden shadow-xl">
+
+
+              <!-- Food and Drink Images -->
+              <div class="relative flex justify-around items-center mt-20 px-10">
+                <!-- Left Food Item -->
+                <div class="w-36 h-36 rounded-full shadow-md flex items-center justify-center">
+                  <img src="../img/CLASSIC COFFEES/Cafe Vienna.jpg" alt="Food Item 1"
+                    class="w-32 h-32 rounded-full object-cover">
+                </div>
+
+                <!-- Center Drink -->
+                <div class="w-48 h-48  rounded-full shadow-lg flex items-center justify-center">
+                  <img src="../img/FLAVORED LATTES/CARAMEL LATTE ICON.jpg" alt="Drink"
+                    class="w-44 h-44 rounded-full object-cover">
+                </div>
+
+                <!-- Right Food Item -->
+                <div class="w-36 h-36 rounded-full shadow-md flex items-center justify-center">
+                  <img src="../img/SMOOTHIES AND FRAPPES/Mango Tango.jpg" alt="Food Item 2"
+                    class="w-32 h-32 rounded-full object-cover">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Background Coffee Beans -->
+          <div class="absolute top-10 left-10">
+            <img src="coffee-beans.png" alt="Coffee Beans" class="w-16 h-auto">
+          </div>
+          <div class="absolute top-10 right-10">
+            <img src="coffee-beans-2.png" alt="Coffee Beans" class="w-16 h-auto">
+          </div>
+        </div>
+    </section>
+
+
+    <!--second section-->
+    <section class=" bg-white w-full h-auto flex flex-col justify-center items-center text-center py-6">
+      <div class="text-4xl sm:text-5xl font-black text-[#1C359A]"> Welcome to Yappari!</div>
+      <div class="lines mt-4">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="mt-4">We are YCB! Our goal is to bring smile on your face with just one sip of our freshly brewed
+        coffee.</div>
+
+      <div id="best-seller" class="flex flex-row space-x-4 mt-4">
+
+        <div id="card1" class="w-72 bg-[#DCDEEA] flex flex-col pt-4 h-auto rounded-lg shadow-lg"> <!--card 1-->
+          <div class="justify-center flex items-center"> <!--image best seller-->
+            <img src="../img/CLASSIC COFFEES/Cafe Vienna.jpg" alt="" class="w-[213px] h-48 rounded-md object-cover">
+          </div>
+
+          <div class="bg-white rounded-md h-full w-full mt-4 p-5 flex flex-col "> <!--best seller content-->
+            <div class="text-[#1C359A] font-bold flex">Cafe Vienna</div> <!--name-->
+            <div class="text-justify opacity-55	"> <!--description-->
+              Viannese Coffee that serves Americano topped with a heavy whipped
+              cream. Dashed with cocoa powder
+            </div>
+
+            <div class="flex flex-row-reverse justify-between mt-auto items-center pt-4">
+              <!-- Price and Add Button -->
+              <div class="price text-sm font-semibold">₱130 - ₱140</div>
+              <button class="bg-[#DCDEEA] text-[#1C359A] text-sm font-bold py-2 px-6 rounded flex items-center gap-2"
+                onclick="window.location.href='your-page-url-here.html';">
+                <img src="../img/cart.png" alt="Add Icon" class="w-4 h-4">
+                <span>Add</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="card2" class="w-72 bg-[#DCDEEA] flex flex-col pt-4 h-auto rounded-lg shadow-lg"> <!--card 2-->
+          <div class="justify-center flex items-center"> <!--image best seller-->
+            <img src="../img/katsudon.jpg" alt="" class="w-[213px] h-48 rounded-md object-cover">
+          </div>
+
+          <div class="bg-white rounded-md h-full w-full mt-4 p-5 flex flex-col"> <!--best seller content-->
+            <div class="text-[#1C359A] font-bold flex">Pork Katsudon</div> <!--name-->
+            <div class="text-justify opacity-55	"> <!--description-->
+              Fried panko-breaded pork cutlet with egg cooked in japanese soy sauce over rice.
+            </div>
+
+            <div class="flex flex-row-reverse justify-between pt-4 top-0 mt-auto items-center ">
+              <!-- Price and Add Button -->
+              <div class="price text-sm font-semibold">₱120</div>
+              <button class="bg-[#DCDEEA] text-[#1C359A] text-sm font-bold py-2 px-6 rounded flex items-center gap-2"
+                onclick="window.location.href='your-page-url-here.html';">
+                <img src="../img/cart.png" alt="Add Icon" class="w-4 h-4">
+                <span>Add</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="card3" class="w-72 bg-[#DCDEEA] flex flex-col pt-4 h-auto rounded-lg shadow-lg"> <!--card 3-->
+          <div class="justify-center flex items-center"> <!--image best seller-->
+            <img src="../img/CLASSIC COFFEES/Caramel Macchiato.jpg" alt="" class="w-[213px] h-48 rounded-md object-cover">
+          </div>
+
+          <div class="bg-white rounded-md h-full w-full mt-4 p-5 flex flex-col"> <!--best seller content-->
+            <div class="text-[#1C359A] font-bold flex">Caramel Macchiato</div> <!--name-->
+            <div class="text-justify opacity-55	"> <!--description-->
+              Milk espresso-based coffee with use of freshly steamed milk, caramel syrup and caramel drizzle on top.
+            </div>
+
+            <div class="flex flex-row-reverse justify-between mt-auto pt-4 items-center">
+              <!-- Price and Add Button -->
+              <div class="price text-sm font-semibold">₱125 - 135</div>
+              <button class="bg-[#DCDEEA] text-[#1C359A] text-sm font-bold py-2 px-6 rounded flex items-center gap-2"
+                onclick="window.location.href='your-page-url-here.html';">
+                <img src="../img/cart.png" alt="Add Icon" class="w-4 h-4">
+                <span>Add</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="card4" class="w-72 bg-[#DCDEEA] flex flex-col pt-4 h-auto rounded-lg shadow-lg"> <!--card 4-->
+          <div class="justify-center flex items-center"> <!--image best seller-->
+            <img src="../img/2022-11-21 (2).jpg" alt="" class="w-[213px] h-48 rounded-md object-cover">
+          </div>
+
+          <div class="bg-white rounded-md h-full w-full mt-4 p-5 flex flex-col"> <!--best seller content-->
+            <div class="text-[#1C359A] font-bold flex">Seafood Pasta</div> <!--name-->
+            <div class="text-justify opacity-55	"> <!--description-->
+              A tomato based pasta that is served with shrimp.
+            </div>
+
+            <div class="flex flex-row-reverse justify-between items-center mt-auto pt-4">
+              <!-- Price and Add Button -->
+              <div class="price text-sm font-semibold">₱160</div>
+              <button class="bg-[#DCDEEA] text-[#1C359A] text-sm font-bold py-2 px-6 rounded flex items-center gap-2"
+                onclick="window.location.href='your-page-url-here.html';">
+                <img src="../img/cart.png" alt="Add Icon" class="w-4 h-4">
+                <span>Add</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="mt-6 bg-[#1C359A] text-sm font-semibold text-white py-3 px-10 rounded-full shadow-lg hover:bg-blue-700">
+        More
+      </button>
+    </section>
+
+
+    <!--third section-->
+    <section class="bg-white w-full h-auto text-center py-6 mt-6">
+      <div class="text-4xl sm:text-5xl font-black text-[#1C359A]">Why Yappari Coffee Bar ?</div>
+      <div class="flex flex-row justify-center mt-6">
+        <div class="float-left">
+          <img src="../img/pngwing.com (2).png" alt="">
+        </div>
+        <div class="flex flex-col justify-center mt-4 sm:mt-0 sm:ml-6 text-left max-w-md space-y-6">
+
+          <div class="space-y-4">
+            <div class="text-[#1C359A] text-lg font-bold">Quality Coffee</div>
+            <p class="text-sm">Experience our passion for coffee firsthand, with <span
+                class="text-[#1C359A] font-bold">unique flavors and a warm ambiance</span> that make us the perfect spot
+              for every coffee lover.</p>
+          </div>
+
+          <div class="space-y-4">
+            <div class="text-[#1C359A] text-lg font-bold">Elevate your Meal</div>
+            <p class="text-sm">Not just coffee—savor our delicious rice meals, featuring authentic <span
+                class="text-[#1C359A] font-bold">Japanese cuisine</span> and other mouthwatering options that perfectly
+              complement your brew!</p>
+          </div>
+
+
+          <div class="space-y-4">
+            <div class="text-[#1C359A] text-lg font-bold">RELAX AND RECHARGE: YOUR COZY COFFEE OASIS!</div>
+            <p class="text-sm">Join us for a delightful coffee experience in our <span
+                class="text-[#1C359A] font-bold">cozy haven</span>, designed to help you relax, recharge, and savor
+              every sip</p>
+          </div>
+
+
+          <div class="space-y-4">
+            <div class="text-[#1C359A] text-lg font-bold">SAFE SPACE CERTIFIED</div>
+            <p class="text-sm">This establishment has completed <span class="text-[#1C359A] font-bold">SOGIESC
+                Inclusivity Training</span> with <span class="text-[#1C359A] font-bold">Queer Safe Spaces, Inc.</span>
+            </p>
+            <div class="text-[#1C359A] text-sm font-bold "><a href="">see more...</a></div>
+          </div>
+
+        </div>
+
+
+      </div>
+
+      <button
+        class="mt-6 bg-[#1C359A] text-sm font-semibold text-white py-3 px-10 rounded-full shadow-lg hover:bg-blue-700">
+        About Us
+      </button>
+
+    </section>
+
+
+    <!--fourth section-->
+    <section class="bg-white w-full h-auto text-center py-6 mt-6">
+      <div class="text-4xl sm:text-5xl font-black text-[#1C359A] h-auto">Find Us & Our Hours</div>
+
+      <div class="flex flex-row justify-center">
+
+        <div class="flex flex-col text-center justify-center sm:mt-0 sm:ml-6 max-w-md space-y-6">
+          <div class="space-y-4">
+            <div class="text-[#1C359A] text-lg font-bold">Location</div>
+            <p class="text-sm">Visit us at 218 Target Range Blvd, Pembo, Makati City – your cozy coffee haven awaits!
+            </p>
+          </div>
+
+          <div class="space-y-4">
+            <div class="text-[#1C359A] text-lg font-bold">Coffee hours</div>
+            <p class="text-sm">Not just coffee—savor our delicious rice meals, featuring authentic <span
+                class="text-[#1C359A] font-bold">We’re open Monday to Sunday. Our operation starts from 10 AM and closes
+                at 2 AM.</p>
+          </div>
+        </div>
+
+        <div class="float-left">
+          <img class="h-96" src="../img/pngwing.com (6).png" alt="">
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+
+
+  <div id="footer"></div>
+
+
+  <script>
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+
+
+  </script>
+</body>
+
+</html>
