@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cart</title>
+  <link rel="stylesheet" href="../css/nav.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/navacc.js"></script>
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="">
+
+    <!-- Profile Header -->
+    <div class="flex flex-col md:flex-row items-center md:items-center w-full bg-[#1C359A] py-10 px-4 md:px-36">
+      <div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-white flex items-center justify-center text-[#1C359A] text-2xl md:text-4xl">
+        <span id="userInitials">--</span>
+      </div>
+      <div class="mt-4 md:mt-0 md:ml-4 text-center md:text-left">
+        <h2 class="text-lg md:text-xl text-white font-semibold" id="userName">Loading...</h2>
+        <p class="text-sm text-white" id="userAddress">Loading...</p>
+      </div>
+      <button id="editProfileBtn" class="mt-4 md:mt-0 md:ml-auto px-4 py-2 bg-blue-500 text-white rounded-md">
+        Edit Profile
+      </button>
+    </div>
+  
+    <!-- Sidebar and Profile Card -->
+    <div class="container mx-auto pt-6 px-4 md:px-36 flex flex-col md:flex-row">
+      <!-- Sidebar -->
+      <aside class="w-full md:w-64 h-auto md:h-screen py-4 flex flex-col space-y-6">
+        <nav class="space-y-4">
+          <!-- User Profile -->
+          <a href="#profile" class="flex items-center space-x-4">
+            <img src="path-to-user-profile-icon.svg" alt="User Profile" class="w-6 h-6">
+            <span class="font-semibold">User profile</span>
+          </a>
+  
+          <!-- Cart -->
+          <a href="#cart" class="flex items-center space-x-4 text-gray-800 hover:text-blue-600">
+            <img src="path-to-cart-icon.svg" alt="Cart" class="w-6 h-6">
+            <span class="font-semibold">Cart</span>
+          </a>
+  
+          <!-- Order Status -->
+          <a href="#order-status" class="flex items-center space-x-4 text-gray-800 hover:text-blue-600">
+            <img src="path-to-order-status-icon.svg" alt="Order Status" class="w-6 h-6">
+            <span class="font-semibold">Order status</span>
+          </a>
+  
+          <!-- Order History -->
+          <a href="#order-history" class="flex items-center space-x-4 text-gray-800 hover:text-blue-600">
+            <img src="path-to-order-history-icon.svg" alt="Order History" class="w-6 h-6">
+            <span class="font-semibold">Order History</span>
+          </a>
+        </nav>
+  
+        <!-- Sign Out Button -->
+        <div class="mt-6">
+          <button class="flex items-center justify-center w-full px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700">
+            <img src="path-to-sign-out-icon.svg" alt="Sign Out" class="w-5 h-5 mr-2">
+            SIGN OUT
+          </button>
+        </div>
+      </aside>
+
+
+
+      <div class="w-full mx-auto bg-white p-6 ">
+        <form action="/update-cart" method="POST" id="cartForm">
+          <table class="w-full border-collapse">
+            <thead>
+              <tr class="border-b">
+                <th class="text-left py-2">Product Details</th>
+                <th class="text-center py-2">Quantity</th>
+                <th class="text-center py-2">Price</th>
+                <th class="text-center py-2">Total</th>
+              </tr>
+            </thead>
+            <tbody id="cartTableBody">
+              <!-- Dynamic rows will be inserted here -->
+            </tbody>
+          </table>
+    
+          <!-- Submit Button -->
+          <div class="mt-6 flex justify-end">
+            <button 
+              id="proceed"
+              type="submit" 
+              class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+              Proceed
+            </button>
+          </div>
+        </form>
+      </div>
+
+
+
+      </div>
+
+
+
+
+
+
+
+
+  </main>
+
+
+  <div id="footer"></div>
+
+  <script>
+    /* Example product data (in a real implementation, these would come from the backend)
+    
+    const cartProducts = [
+      { id: 1, name: "Cafe Viena", price: 130, quantity: 1, image: "https://via.placeholder.com/60" },
+      { id: 2, name: "Cappuccino", price: 115, quantity: 1, image: "https://via.placeholder.com/60" },
+      { id: 3, name: "Pork Katsu Curry", price: 135, quantity: 1, image: "https://via.placeholder.com/60" },
+    ];
+    */
+
+
+
+    // Reference to the table body
+    const cartTableBody = document.getElementById("cartTableBody");
+
+    // Function to render cart items
+    function renderCartItems() {
+      cartTableBody.innerHTML = ""; // Clear existing rows
+
+      cartProducts.forEach((product) => {
+        const row = document.createElement("tr");
+        row.className = "border-b";
+
+        row.innerHTML = `
+          <td class="py-4 flex items-center">
+            <img src="${product.image}" alt="Product Image" class="w-16 h-16 rounded mr-4">
+            <div>
+              <p class="text-gray-800 font-semibold">${product.name}</p>
+              <button 
+              type="button" 
+              class="font-thin text-grey px-3 py-1 rounded hover:bg-red-500"
+              onclick="removeProduct(${product.id})">
+              Remove
+            </button>
+              <input type="hidden" name="product_id[]" value="${product.id}">
+            </div>
+          </td>
+          <td class="py-4 text-center">
+            <input 
+              type="number" 
+              name="quantity[]" 
+              class="w-16 text-center border rounded" 
+              value="${product.quantity}" 
+              min="1">
+          </td>
+          <td class="py-4 text-center">
+            <input type="hidden" name="price[]" value="${product.price}">
+            <span class="text-gray-800">₱ ${product.price}</span>
+          </td>
+          <td class="py-4 text-center">
+            <input type="hidden" name="total[]" value="${product.price * product.quantity}">
+            <span class="text-gray-800">₱ ${product.price * product.quantity}</span>
+          </td>
+         
+        `;
+
+        cartTableBody.appendChild(row);
+      });
+    }
+
+    // Function to remove a product
+    function removeProduct(productId) {
+      const productIndex = cartProducts.findIndex((product) => product.id === productId);
+      if (productIndex > -1) {
+        cartProducts.splice(productIndex, 1); // Remove product from array
+        renderCartItems(); // Re-render table
+      }
+    }
+
+    // Initial render
+    renderCartItems();
+  </script>
+
+</body>
+</html>
