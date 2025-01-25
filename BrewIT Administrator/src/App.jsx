@@ -2,14 +2,19 @@ import { useState } from 'react'
 
 import './App.css'
 
-function App() {
- 
-
+function MyButton() {
   return (
-    <>
-    
-    </>
-  )
+    <button>
+      I'm a button
+    </button>
+  );
 }
 
-export default App
+export default function App() {
+  return (
+    <div>
+      <h1>Welcome to my app</h1>
+      <MyButton />
+    </div>
+  );
+}
