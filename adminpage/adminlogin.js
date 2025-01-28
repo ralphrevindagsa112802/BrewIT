@@ -1,4 +1,4 @@
-/* kuha ko lang kay gpt to hahaha wala to nyahahahaha*/
+/* kuha ko lang kay chatgpt to hahaha wala to nyahahahaha*/
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
