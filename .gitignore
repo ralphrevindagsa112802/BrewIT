@@ -472,3 +472,15 @@ composer.lock
 *.css.map
 *.sass.map
 *.scss.map
+
+
+node_modules/
+dist/
+coverage/
+.turbo
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+target/
+.debug
