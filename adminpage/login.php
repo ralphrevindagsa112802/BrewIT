@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+include("../connection/connection.php");
+error_reporting(0);
+session_start();
+if(isset($_POST['submit']))
+{
+	$username = $_POST['username'];
+	$password = $_POST['password'];
+	
+	if(!empty($_POST["submit"])) 
+     {
+	$loginquery ="SELECT * FROM admin WHERE username='$username' && password='".md5($password)."'";
+	$result=mysqli_query($db, $loginquery);
+	$row=mysqli_fetch_array($result);
+	
+	                        if(is_array($row))
+								{
+                                    	$_SESSION["admin_id"] = $row['admin_id'];
+										header("refresh:1;url=signup.php");
+	                            } 
+							else
+							    {
+										echo "<script>alert('Invalid Username or Password!');</script>"; 
+                                }
+	 }
+	
+	
+}
+
+?>
+
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./output.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="adminlogin.js"></script>
+    <script src="admnlogin.js"></script>
     <title>admin login</title>
 </head>
 <style>
@@ -18,22 +51,25 @@
         <h2 class="text-2xl font-bold text-center text-blue-800">Yappari Admin Login</h2>
         <p class="text-gray-600 text-center mt-2">Please fill in your unique admin login details below</p>
         
-        <form id="adminLoginForm" class="mt-6">
+       
+  
+
+        <form id="adminLoginForm" class="mt-6" action="dashboard.php" method="post">
             <div class="mb-4">
-                <label class="block text-gray-700">Email address</label>
-                <input type="email" id="email" class="w-full p-3 mt-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your admin email" required>
+                <label class="block text-gray-700">Username</label>
+                <input type="text" name="username" id="username" class="w-full p-3 mt-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your admin email" required>
             </div>
 
             <div class="mb-4">
                 <label class="block text-gray-700">Password</label>
-                <input type="password" id="password" class="w-full p-3 mt-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your admin password" required>
+                <input type="password" name="password" id="password" class="w-full p-3 mt-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your admin password" required>
             </div>
 
             <div class="text-right mb-4">
-                <a href="#" class="text-gray-500 hover:underline">Forgot password?</a>
+                <a href="../adminpage/signup.php" class="text-gray-500 hover:underline">Create account</a>
             </div>
 
-            <button type="submit" class="w-full bg-blue-800 text-white py-3 rounded-lg hover:bg-blue-700 transition">
+            <button type="submit"  name="submit" value="Login" class="w-full bg-blue-800 text-white py-3 rounded-lg hover:bg-blue-700 transition">
                 Sign In
             </button>
         </form>
@@ -42,7 +78,7 @@
     </div>
 
     <script>
-
+/*
         document.getElementById("adminLoginForm").addEventListener("submit", async function(event) {
             event.preventDefault();
 
