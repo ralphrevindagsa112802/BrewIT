@@ -11,14 +11,15 @@ if(isset($_POST['submit']))
 	
 	if(!empty($_POST["submit"])) 
      {
-	$loginquery ="SELECT * FROM admin WHERE username='$username' && password='".md5($password)."'";
+    $loginquery = "SELECT * FROM admin WHERE username='$username' AND password='$password'";
+    
 	$result=mysqli_query($db, $loginquery);
 	$row=mysqli_fetch_array($result);
 	
 	                        if(is_array($row))
 								{
                                     	$_SESSION["admin_id"] = $row['admin_id'];
-										header("refresh:1;url=signup.php");
+										header("refresh:1;url=dashboard.php");
 	                            } 
 							else
 							    {
@@ -54,7 +55,7 @@ if(isset($_POST['submit']))
        
   
 
-        <form id="adminLoginForm" class="mt-6" action="dashboard.php" method="post">
+        <form id="adminLoginForm" class="mt-6" action="login.php" method="post">
             <div class="mb-4">
                 <label class="block text-gray-700">Username</label>
                 <input type="text" name="username" id="username" class="w-full p-3 mt-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your admin email" required>

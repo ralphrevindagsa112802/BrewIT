@@ -54,7 +54,7 @@
 
   
 <?php
-include("connection/connection.php"); 
+include("./connection/connection.php"); 
 error_reporting(0); 
 session_start(); 
 if(isset($_POST['submit']))  
@@ -71,7 +71,7 @@ if(isset($_POST['submit']))
 	                        if(is_array($row)) 
 								{
                                     	$_SESSION["user_id"] = $row['u_id']; 
-                                      header("Location: ./useraccount/homeacc.html"); 
+                                      header("Location: ./useraccount/homeacc.php"); 
 
  
 	                            } 
