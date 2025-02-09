@@ -66,10 +66,6 @@ if(isset($_POST['submit']))
                 <input type="password" name="password" id="password" class="w-full p-3 mt-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your admin password" required>
             </div>
 
-            <div class="text-right mb-4">
-                <a href="../adminpage/signup.php" class="text-gray-500 hover:underline">Create account</a>
-            </div>
-
             <button type="submit"  name="submit" value="Login" class="w-full bg-blue-800 text-white py-3 rounded-lg hover:bg-blue-700 transition">
                 Sign In
             </button>
