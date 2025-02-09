@@ -19,7 +19,7 @@ if(isset($_POST['submit']))
 	                        if(is_array($row))
 								{
                                     	$_SESSION["admin_id"] = $row['admin_id'];
-										header("refresh:1;url=dashboard.php");
+										header("refresh:1;url=dashboard.html");
 	                            } 
 							else
 							    {

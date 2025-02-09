@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Admin panel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="menu.js"></script>
+
+</head>
+
+<style>
+  * {
+    font-family: 'Inter', sans-serif;
+  }
+</style>
+
+<body class="bg-[#DCDEEA]">
+  <!--nav bar-->
+  <div class="w-full mx-auto flex items-center justify-between py-4 px-12 shadow-md bg-white">
+    <div class="flex items-center justify-center md:justify-start w-full md:w-auto">
+      <img class="h-20 w-auto object-contain block" src="../img/YCB LOGO (BLUE).png" alt="">
+    </div>
+    <div class="text-xl text-[#1C359A] font-bold">
+      Admin
+    </div>
+  </div>
+
+
+
+  <div class="flex flex-row h-screen">
+
+    <!-- Sidebar -->
+    <div class="w-64 flex-none bg-white shadow-md h-screen flex flex-col p-4">
+
+      <nav class="flex flex-col space-y-4">
+        <a href="dashboard.html"
+          class="font-bold border-l-2 border-black hover:border-[#1C359A] sidebar-link flex items-center justify-center pace-x-2 p-3 hover:bg-gray-200 text-gray-800"
+          data-section="orders">
+          <div class="w-1 h-6 bg-transparent sidebar-indicator"></div>
+          <span class="text-bold">Orders</span>
+        </a>
+        <a href="menu.html"
+          class="font-bold border-l-2 border-black hover:border-[#1C359A] sidebar-link flex items-center justify-center space-x-2 p-3 hover:bg-gray-200 text-gray-800"
+          data-section="menu">
+          <div class="w-1 h-6 bg-transparent sidebar-indicator"></div>
+          <span>Menu</span>
+        </a>
+        <a href="#"
+          class="font-bold border-l-2 border-black hover:border-[#1C359A] sidebar-link flex items-center justify-center space-x-2 p-3 hover:bg-gray-200 text-gray-800"
+          data-section="feedback">
+          <div class="w-1 h-6 bg-transparent sidebar-indicator"></div>
+          <span>Feedback</span>
+        </a>
+        <a href="#"
+          class="font-bold border-l-2 border-black hover:border-[#1C359A] sidebar-link flex items-center justify-center space-x-2 p-3 hover:bg-gray-200 text-gray-800"
+          data-section="order-history">
+          <div class="w-1 h-6 bg-transparent sidebar-indicator"></div>
+          <span>Order History</span>
+        </a>
+      </nav>
+
+      <!-- Sign Out Button -->
+      <button id="signOutBtn"
+        class="mt-20 font-bold flex items-center justify-center bg-[#1C359A] text-white px-4 py-2 rounded-lg hover:bg-blue-800">
+        <span class="mr-2"><img src="#" alt=""></span> SIGN OUT
+      </button>
+    </div>
+
+    <!--main content-->
+    <main class="p-6 w-full flex-1 overflow-auto">
+      <div class="w-full flex justify-between">
+        <div class="text-[#1C359A] text-lg font-bold">Order Management</div>
+
+        <div class="flex gap-2">
+          <button class="px-4 py-2 border-2 border-[#1C359A] text-black font-bold rounded-md hover:bg-white">
+            Post status
+          </button>
+          <button class="px-4 py-2 border-2 border-[#1C359A] text-black font-bold rounded-md hover:bg-white">
+            Complete
+          </button>
+          <button
+            class="px-4 py-2 border-2 border-[#1C359A] text-black font-bold rounded-md flex items-center space-x-2 hover:bg-white">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h3m-4.5 6h6m-7.5 6h9" />
+            </svg>
+            <span>Filter</span>
+          </button>
+        </div>
+      </div>
+
+
+      
+<!--menu content management-->
+
+<div class="p-2 w-full mt-6 rounded-2xl"> <!--menu header-->
+  <table class="w-full  ">
+    <thead class=" bg-white opacity-90 rounded-2xl">
+      <tr class="">
+        <th class="p-3 text-left  text-[#808080]"><input type="checkbox" /></th>
+        <th class="p-3 text-left text-sm text-[#808080]">Order #</th>
+        <th class="p-3 text-left text-sm text-[#808080]">Date</th>
+        <th class="p-3 text-left text-sm text-[#808080]">Order details</th>
+        <th class="p-3 text-left text-sm text-[#808080]">Service option</th>
+        <th class="p-3 text-left text-sm text-[#808080]">Location</th>
+        <th class="p-3 text-left text-sm text-[#808080]">Total</th>
+        <th class="p-3 text-left text-sm text-[#808080]">Status</th>
+        <th class="p-3 text-left text-sm text-[#808080]">Update</th>
+
+      </tr>
+    </thead>
+    <!-- menu here
+      <tbody>
+          {products.map((product, index) => (
+              <tr key={index} className="border-t">
+                  <td className="p-3"><input type="checkbox" /></td>
+                  <td className="p-3">{product.product}</td>
+                  <td className="p-3">{product.category}</td>
+                  <td className="p-3">₱{product.price}</td>
+                  <td className="p-3">{product.size}</td>
+                  <td className="p-3">{product.availability}</td>
+                  <td className="p-3">{product.description}</td>
+                  <td className="p-3">
+                      <button className="px-3 py-1 border border-red-500 text-red-500 rounded-md hover:bg-red-100">
+                          Delete
+                      </button>
+                  </td>
+              </tr>
+          ))}
+      </tbody>
+    -->
+
+    <tbody class="bg-white w-full rounded-lg mt-6 h-auto">           <!--menu-->
+      <tr key={index} class="border-t ">
+        <td class="p-3"><input type="checkbox" /></td>
+        <td class="p-3">{product.product}</td>
+        <td class="p-3">{product.category}</td>
+        <td class="p-3">₱{product.price}</td>
+        <td class="p-3">{product.size}</td>
+        <td class="p-3">{product.availability}</td>
+        <td class="p-3">{product.description}</td>
+        <td class="p-3">{product.description}</td>
+
+        <td class="p-3">
+          <!--
+                  <button className="px-3 py-1 border border-red-500 text-red-500 rounded-md hover:bg-red-100">
+                      Delete
+                  </button> -->
+
+          <div class="relative">
+            <!-- Three Dots Button -->
+            <button id="dropdownBtn" class="p-2 rounded hover:bg-gray-200">
+              &#8230;
+            </button>
+
+            <!-- Dropdown Menu -->
+            <div id="dropdownMenu" class="absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-lg hidden">
+              <div class="w-full text-left px-4 py-2 text-[#1C359A] hover:bg-gray-200">Update status</div>
+              <button class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-200">Payment accepted</button>
+              <button class="w-full text-left px-4 py-2 text-red-600 hover:bg-gray-200">Preparing</button>
+              <button class="w-full text-left px-4 py-2 text-green-600 hover:bg-gray-200">Ready to pickup</button>
+              <button class="w-full text-left px-4 py-2 text-black hover:bg-gray-200">Out of delivery</button>
+              <button class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-200">Completed</button>
+              <button class="w-full text-left px-4 py-2 text-red-600 hover:bg-gray-200">Order Accepted</button>
+              <button><!--confirm status--></button>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+
+
+  </table>
+
+
+</div>
+
+    </main>
+
+
+  </div>
+
+  <script>
+    // Handle active section styling
+    document.querySelectorAll('.sidebar-link').forEach(link => {
+      link.addEventListener('click', function () {
+        document.querySelectorAll('.sidebar-indicator').forEach(ind => ind.classList.remove('bg-blue-700'));
+        this.querySelector('.sidebar-indicator').classList.add('bg-blue-700');
+      });
+    });
+
+    // Sign Out button functionality
+    document.getElementById('signOutBtn').addEventListener('click', function () {
+      fetch('/api/logout', { method: 'POST' }) // Backend logout endpoint
+        .then(response => {
+          if (response.ok) {
+            window.location.href = '/login';
+          }
+        })
+        .catch(error => console.error('Logout failed:', error));
+    });
+  </script>
+
+</body>
+
+</html>
