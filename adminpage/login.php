@@ -98,6 +98,7 @@ if(isset($_POST['submit']))
                 document.getElementById("errorMessage").classList.remove("hidden");
             }
         });
+*/
     </script>
 </body>
 </html>
